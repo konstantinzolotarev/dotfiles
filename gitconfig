@@ -1,0 +1,26 @@
+[user]
+	name = Konstantin Zolotarev
+	email = konstantin.zolotarev@gmail.com
+[url "git@bitbucket.org:"]
+	insteadOf = https://bitbucket.org/
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[http "https://gopkg.in/"]
+	followRedirects = true
+[merge "ours"]
+	driver = true
+[pull]
+	rebase = true
+[core]
+	editor = /usr/local/bin/nvim
+	excludesfile = /Users/kos/.gitignore_global
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3
+[mergetool]
+	prompt = false
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

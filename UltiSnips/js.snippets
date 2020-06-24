@@ -1,0 +1,47 @@
+snippet us
+'use strict'
+endsnippet
+
+snippet cl
+console.log(${1})
+endsnippet
+
+snippet ccl
+console.log('==============================')
+console.log(${1})
+console.log('==============================')
+endsnippet
+
+snippet tni
+throw new Error('Not implemented yet')$1
+endsnippet
+
+snippet pni
+return Promise.reject('Not implemented yet')$1
+endsnippet
+
+snippet af "small arrow function" i
+($1) => {$0}
+endsnippet
+
+snippet aff "arrow function" i
+(${1}) => {
+  $0
+}
+endsnippet
+
+snippet fn "function" i
+function (${1}) {$0}
+endsnippet
+
+snippet err "new Error" i
+new Error(${1:''})
+endsnippet
+
+snippet todo
+// TODO: $1
+endsnippet
+
+snippet esld
+// eslint-disable-line
+endsnippet
