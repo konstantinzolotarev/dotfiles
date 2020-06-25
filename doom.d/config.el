@@ -56,3 +56,20 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+;; (setq ivy-posframe-display-functions-alist
+;;       '((counsel-git-grep . ivy-display-function-fallback)
+;;         (counsel-grep . ivy-display-function-fallback)
+;;         (counsel-rg . ivy-display-function-fallback)
+;;         (swiper . ivy-display-function-fallback)
+;;         (t . ivy-posframe-display-at-frame-top-center)))
+
+;; Treemacs additional bindings
+(map! :g "<f8>" 'treemacs)
+
+;; Navigation mappings
+(map! :ne "s-]" 'evil-window-next)
+(map! :ne "s-[" 'evil-window-left)
+
+;; Dash integration
+(map! :ne "<f5>" 'dash-at-point-with-docset)
