@@ -156,6 +156,7 @@ alias mt='mix test'
 alias mi='mix deps.get'
 
 alias doc='docker'
+alias dcom='docker-compose'
 alias docker-all-stop='docker stop $(docker ps -aq)'
 alias docker-all-remove='docker rm $(docker ps -aq)'
 

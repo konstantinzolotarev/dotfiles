@@ -64,12 +64,37 @@
 ;;         (swiper . ivy-display-function-fallback)
 ;;         (t . ivy-posframe-display-at-frame-top-center)))
 
+;; Fix scrolling issues
+(setq scroll-margin 1
+  scroll-step 1
+  scroll-conservatively 10000
+  scroll-preserve-screen-position 1)
+
+;; Defining most often typo for VIM commands
+(evil-ex-define-cmd "Bd[delete]" 'evil-delete-buffer)
+(evil-ex-define-cmd "W[rite]" 'evil-write)
+(evil-ex-define-cmd "Lw[rite]" 'evil-write)
+
+;; Elixir commands, with all typos
+(evil-ex-define-cmd "MF[ormat]" 'elixir-format)
+(evil-ex-define-cmd "Mf[ormat]" 'elixir-format)
+(evil-ex-define-cmd "mf[ormat]" 'elixir-format)
+
+;; Create a buffer-local hook to run elixir-format on save, only when we enable elixir-mode.
+(add-hook 'elixir-mode-hook
+          (lambda () (add-hook 'before-save-hook 'elixir-format nil t)))
+
 ;; Treemacs additional bindings
 (map! :g "<f8>" 'treemacs)
 
 ;; Navigation mappings
-(map! :ne "s-]" 'evil-window-next)
-(map! :ne "s-[" 'evil-window-left)
+(map! :g "M-]" #'evil-window-next
+      :g "M-[" #'evil-window-left)
+
+(map! :n (kbd "TAB TAB") #'evil-append-line)
+
+;; Make tab working as expected
+(map! :i "TAB" #'tab-to-tab-stop)
 
 ;; Dash integration
 (map! :ne "<f5>" 'dash-at-point-with-docset)

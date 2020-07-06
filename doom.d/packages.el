@@ -50,3 +50,12 @@
 ;(unpin! t)
 
 (package! dash-at-point)
+
+;; DAP mode for debugging
+;; (package! dap-mode)
+
+;; Elixir plugins
+;; (package! exunit)
+;; (package! elixir-mode)
+;; (package! alchemist)
+(package! mix)
