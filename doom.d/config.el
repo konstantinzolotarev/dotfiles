@@ -79,6 +79,11 @@
 (evil-ex-define-cmd "MF[ormat]" 'elixir-format)
 (evil-ex-define-cmd "Mf[ormat]" 'elixir-format)
 (evil-ex-define-cmd "mf[ormat]" 'elixir-format)
+(evil-ex-define-cmd "mt[est]" 'mix-test)
+(evil-ex-define-cmd "Mt[est]" 'mix-test)
+(evil-ex-define-cmd "mtt[est current]" 'mix-test-current-test)
+(evil-ex-define-cmd "Mtt[est current]" 'mix-test-current-test)
+(evil-ex-define-cmd "Mtt[est current buffer]" 'mix-test-current-buffer)
 
 ;; Create a buffer-local hook to run elixir-format on save, only when we enable elixir-mode.
 (add-hook 'elixir-mode-hook
