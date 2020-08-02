@@ -93,10 +93,10 @@
 (map! :g "<f8>" 'treemacs)
 
 ;; Navigation mappings
-(map! :g "M-]" #'evil-window-next
-      :g "M-[" #'evil-window-left)
-
-(map! :n (kbd "TAB TAB") #'evil-append-line)
+(map! :g "s-]" #'evil-window-next
+      :g "s-[" #'evil-window-left
+      :g "M-]" #'evil-next-buffer
+      :g "M-[" #'evil-prev-buffer)
 
 ;; Make tab working as expected
 (map! :i "TAB" #'tab-to-tab-stop)

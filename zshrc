@@ -11,6 +11,7 @@ export PATH=$HOME/Coding/maker/mcd-cli/libexec/mcd:$PATH
 export PATH=/Applications/Postgres.app/Contents/Versions/latest/bin/:$PATH
 export PATH=$HOME/.mix/escripts:$PATH
 export PATH=$HOME/.emacs.d/bin:$PATH
+export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -187,3 +188,5 @@ export NVM_DIR="$HOME/.nvm"
 if [ -f /usr/local/etc/profile.d/z.sh ]; then 
   . /usr/local/etc/profile.d/z.sh;
 fi
+
+unsetopt nomatch
