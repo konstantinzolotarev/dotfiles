@@ -59,3 +59,6 @@
 ;; (package! elixir-mode)
 ;; (package! alchemist)
 (package! mix)
+
+;; Rust packages
+;; (package! rust-mode)

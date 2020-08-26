@@ -188,5 +188,6 @@ export NVM_DIR="$HOME/.nvm"
 if [ -f /usr/local/etc/profile.d/z.sh ]; then 
   . /usr/local/etc/profile.d/z.sh;
 fi
+[ -s $HOME/.cargo/env ] && . "$HOME/.cargo/env"
 
 unsetopt nomatch
