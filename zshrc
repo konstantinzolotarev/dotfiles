@@ -12,6 +12,7 @@ export PATH=/Applications/Postgres.app/Contents/Versions/latest/bin/:$PATH
 export PATH=$HOME/.mix/escripts:$PATH
 export PATH=$HOME/.emacs.d/bin:$PATH
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
