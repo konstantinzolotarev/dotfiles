@@ -62,3 +62,6 @@
 
 ;; Rust packages
 ;; (package! rust-mode)
+
+;; Themes
+(package! atom-one-dark-theme)
