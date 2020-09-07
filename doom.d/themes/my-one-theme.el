@@ -34,7 +34,7 @@ determine the exact padding."
 
   ;; name        default   256       16
   ((bg         '("#282c34" nil       nil            ))
-   (bg-alt     '("#282c34" nil       nil            ))
+   (bg-alt     '("#21242b" nil       nil            ))
    (base0      '("#1B2229" "black"   "black"        ))
    (base1      '("#1c1f24" "#1e1e1e" "brightblack"  ))
    (base2      '("#202328" "#2e2e2e" "brightblack"  ))
@@ -108,7 +108,7 @@ determine the exact padding."
 
   ;; --- extra faces ------------------------
   ((elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
-
+  
    (evil-goggles-default-face :inherit 'region :background (doom-blend region bg 0.5))
 
    ((line-number &override) :foreground base4)
@@ -130,6 +130,7 @@ determine the exact padding."
    (mode-line-emphasis
     :foreground (if -modeline-bright base8 highlight))
 
+   (solaire-default-face  :inherit 'default :background bg)
    (solaire-mode-line-face
     :inherit 'mode-line
     :background modeline-bg-l
