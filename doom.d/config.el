@@ -27,9 +27,9 @@
 ;;       doom-unicode-font (font-spec :family "JetBrains Mono" :size 14)
 ;;       doom-big-font (font-spec :family "JetBrains Mono" :size 19))
 
-(setq doom-font (font-spec :family "Monaco" :size 15)
+(setq doom-font (font-spec :family "Monaco" :size 14)
       doom-big-font (font-spec :family "Monaco")
-      doom-variable-pitch-font (font-spec :family "Monaco" :size 15)
+      doom-variable-pitch-font (font-spec :family "Monaco" :size 14)
       doom-serif-font (font-spec :family "JetBrains Mono" :size 19))
 
 ;; (setq doom-themes-enable-bold nil)
@@ -118,6 +118,11 @@
 (evil-ex-define-cmd "Mtt[est current]" 'mix-test-current-test)
 (evil-ex-define-cmd "Mtt[est current buffer]" 'mix-test-current-buffer)
 (evil-ex-define-cmd "bd" 'kill-current-buffer)
+;; Make workds like in VIM
+;; (modify-syntax-entry ?_ "w")
+(add-hook 'after-change-major-mode-hook
+          (lambda ()
+            (modify-syntax-entry ?_ "w")))
 
 ;; Create a buffer-local hook to run elixir-format on save, only when we enable elixir-mode.
 (add-hook 'elixir-mode-hook
