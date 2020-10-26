@@ -73,11 +73,6 @@ Plug 'konstantinzolotarev/elixir-snippets'
 " GO lang plugins
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'tag': '*' }
 
-" Autocomplete
-" if has('nvim')
-  " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" endif
-
 " Themes
 Plug 'konstantinzolotarev/solas.vim'
 Plug 'joshdick/onedark.vim'
@@ -86,14 +81,6 @@ call plug#end()            " required
 
 "Bind leader
 let mapleader=","
-
-" Enable deoplate
-" if has('nvim')
-  " let g:deoplete#enable_at_startup = 1
-	" set completeopt+=noinsert
-  " call deoplete#custom#option('auto_complete', v:false)
-  " call deoplete#custom#option('auto_complete_delay', 200)
-" endif
 
 " airline
 let g:airline_theme='wombat'
