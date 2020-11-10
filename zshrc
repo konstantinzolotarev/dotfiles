@@ -66,8 +66,10 @@ ZSH_DISABLE_COMPFIX="true"
 plugins=(zsh-autosuggestions git mix npm docker docker-compose kubectl)
 
 source $ZSH/oh-my-zsh.sh
-source <(kubectl completion zsh)
 
+if [ -x "$(command -v kubectl)" ]; then
+	source <(kubectl completion zsh)
+fi
 # source $ZSH/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # User configuration
