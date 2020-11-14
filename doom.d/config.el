@@ -116,6 +116,7 @@
 (evil-ex-define-cmd "MFf[ormat]" 'elixir-format)
 (evil-ex-define-cmd "Mff[ormat]" 'elixir-format)
 (evil-ex-define-cmd "mff[ormat]" 'elixir-format)
+;; Testing functionality
 (evil-ex-define-cmd "mt[est]" 'mix-test)
 (evil-ex-define-cmd "Mt[est]" 'mix-test)
 (evil-ex-define-cmd "mtt[est current]" 'mix-test-current-test)
