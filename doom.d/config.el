@@ -103,6 +103,9 @@
   scroll-conservatively 10000
   scroll-preserve-screen-position 1)
 
+;; Projectile tuning
+(setq projectile-indexing-method 'hybrid)
+
 ;; Defining most often typo for VIM commands
 (evil-ex-define-cmd "Bd[delete]" 'evil-delete-buffer)
 (evil-ex-define-cmd "W[rite]" 'evil-write)
