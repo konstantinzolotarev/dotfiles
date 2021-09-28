@@ -240,6 +240,7 @@ noremap <Leader><Leader>f :Fixmyjs<CR>
 :command Mt execute "Mix test"
 :command Mf execute "Mix format"
 :command Mff execute "Mix format %"
+:command Mtf execute "Mix test %"
 :command Mtt execute "Mix test %:".line(".")
 
 function! XmlIndent()
