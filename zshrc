@@ -14,6 +14,8 @@ export PATH=$HOME/.emacs.d/bin:$PATH
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 
+HOMEBREW_REPOSITORY=${HOMEBREW_REPOSITORY:-"/usr/local"}
+
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
@@ -207,27 +209,28 @@ function release_notes { curl -L -s http://bit.ly/2CIE31y | python - $1 develop;
 # . $HOME/.asdf/asdf.sh
 # . $HOME/.asdf/completions/asdf.bash
 
+# New nvm installation
 export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+[ -s "$HOMEBREW_REPOSITORY/opt/nvm/nvm.sh" ] && . "$HOMEBREW_REPOSITORY/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "$HOMEBREW_REPOSITORY/opt/nvm/etc/bash_completion.d/nvm" ] && . "$HOMEBREW_REPOSITORY/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
-if [ -f /usr/local/etc/profile.d/z.sh ]; then 
-  . /usr/local/etc/profile.d/z.sh;
-fi
+# Z installation
+[ -f "$HOMEBREW_REPOSITORY/etc/profile.d/z.sh" ] && . "$HOMEBREW_REPOSITORY/etc/profile.d/z.sh";
+
 [ -s $HOME/.cargo/env ] && . "$HOME/.cargo/env"
 
 unsetopt nomatch
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/kos/opt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$(''${HOME}'/opt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/Users/kos/opt/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/kos/opt/miniconda3/etc/profile.d/conda.sh"
+    if [ -f "$HOME/opt/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "$HOME/opt/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/Users/kos/opt/miniconda3/bin:$PATH"
+        export PATH="$HOME/opt/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
