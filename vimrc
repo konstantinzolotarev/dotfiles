@@ -63,9 +63,11 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 
 " Elixir & Phoenix
-" Plug 'elixir-editors/vim-elixir'
-Plug 'slashmili/alchemist.vim'
+Plug 'elixir-editors/vim-elixir'
+" Plug 'slashmili/alchemist.vim'
 Plug 'konstantinzolotarev/elixir-snippets'
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+" Plug 'amiralies/coc-elixir', {'do': 'yarn install && yarn prepack'}
 
 " Elm plugins
 " Plug 'elmcast/elm-vim'
@@ -189,6 +191,28 @@ au FileType go nnoremap <leader>ga :GoAlternate<CR>
 " deoplate-go
 let g:deoplete#sources#go#pointer = 1
 
+" Setting up coc for elixir-ls sudgestions
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+" inoremap <silent><expr> <TAB>
+      " \ pumvisible() ? "\<C-n>" :
+      " \ <SID>check_back_space() ? "\<TAB>" :
+      " \ coc#refresh()
+" inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+" Use <c-space> to trigger completion.
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
+
+" Make <CR> auto-select the first completion item and notify coc.nvim to
+" format on enter, <cr> could be remapped by other vim plugin
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
 " Dash docs
 nmap <leader>d <Plug>DashSearch
 nmap <leader>gd <Plug>DashGlobalSearch
@@ -218,7 +242,7 @@ map <S-h> <S-Left>
 
 noremap <C-\> :bprev<CR>
 noremap <C-]> :bnext<CR>
-nnoremap <tab> <C-w>w
+" nnoremap <tab> <C-w>w
 nnoremap <D-]> <C-w>w
 nnoremap <D-[> <C-w>p
 
