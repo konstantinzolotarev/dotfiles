@@ -1,5 +1,13 @@
 # Installation
 
+# Brew packages
+
+VIM search requirements:
+
+```bash
+$ brew install fzf ag rg
+```
+
 ## Elixir-LS VIM installation
 After installing everything in vim you have to install `coc-elixir` plugin.
 

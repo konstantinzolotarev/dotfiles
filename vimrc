@@ -56,7 +56,8 @@ Plug 'w0rp/ale'
 Plug 'kien/ctrlp.vim'
 
 " Super awesome search plugin
-Plug 'mileszs/ack.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 " Markdown support
 Plug 'godlygeek/tabular'
@@ -73,7 +74,7 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 " Plug 'elmcast/elm-vim'
 
 " GO lang plugins
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'tag': '*' }
+" Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'tag': '*' }
 
 " Themes
 Plug 'konstantinzolotarev/solas.vim'
@@ -261,11 +262,64 @@ noremap <Leader><Leader>f :Fixmyjs<CR>
 :command W w
 :command Q q
 
+function! FindMixDirectory() "{{{
+    let fName = expand("%:p:h")
+
+    while 1
+        let mixFileName = fName . "/mix.exs"
+        if file_readable(mixFileName)
+            return fName
+        endif
+
+        let fNameNew = fnamemodify(fName, ":h")
+        " after we reached top of heirarchy
+        if fNameNew == fName
+            return ''
+        endif
+        let fName = fNameNew
+    endwhile
+endfunction "}}}
+
+function! Mix(...)
+  let mixDir = FindMixDirectory()
+
+  let old_cwd = getcwd()
+  if mixDir != ''
+    execute 'lcd ' . fnameescape(mixDir)
+  endif
+
+  exe '!mix ' . join(copy(a:000), ' ')
+
+  execute 'lcd ' . fnameescape(old_cwd)
+endfunction
+
+function! Mix_complete(ArgLead, CmdLine, CursorPos, ...)
+  if !exists('g:mix_tasks')
+    let mixDir = FindMixDirectory()
+
+    let old_cwd = getcwd()
+    if mixDir != ''
+      execute 'lcd ' . fnameescape(mixDir)
+    endif
+
+    let g:mix_tasks = system("mix -h | awk '!/-S/ && $2 != \"#\" { print $2 }'")
+
+    execute 'lcd ' . fnameescape(old_cwd)
+  endif
+  return g:mix_tasks
+endfunction
+
+if !exists(':Mix')
+  command! -bar -nargs=? -complete=custom,Mix_complete Mix
+        \ call Mix(<q-args>)
+endif
+
 :command Mt execute "Mix test"
 :command Mf execute "Mix format"
 :command Mff execute "Mix format %"
 :command Mtf execute "Mix test %"
 :command Mtt execute "Mix test %:".line(".")
+
 
 function! XmlIndent()
   set ts=2
@@ -293,6 +347,7 @@ au BufNewFile,BufRead *.ejs set filetype=html
 filetype plugin indent on    " required
 
 set regexpengine=1
+
 
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
 "If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
