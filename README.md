@@ -2,6 +2,11 @@
 
 # Brew packages
 
+```bash
+# Installing all required brew commands
+brew install git wget zsh z fzf ag rg pgcli nvm erlang elixir go@1.17
+```
+
 VIM search requirements:
 
 ```bash

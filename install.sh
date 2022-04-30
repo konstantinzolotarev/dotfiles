@@ -2,6 +2,9 @@
 
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
+# Installing all required brew commands
+# brew install git wget zsh z fzf ag rg pgcli nvm erlang elixir go@1.17
+
 # vim
 [ ! -f ${HOME}/.vimrc ] && ln -s ${BASEDIR}/vimrc ${HOME}/.vimrc
 
