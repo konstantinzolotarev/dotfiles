@@ -13,6 +13,52 @@ VIM search requirements:
 $ brew install fzf ag rg
 ```
 
+# NeoVIM installation
+
+First install neovim
+
+```bash
+brew install neovim
+```
+
+To start the transition, create your |init.vim| (user config) file:
+
+Open `nvim` and run this commands:
+
+```
+:call mkdir(stdpath('config'), 'p')
+:exe 'edit '.stdpath('config').'/init.vim'
+```
+
+Add these contents to the file:
+```
+set runtimepath^=~/.vim runtimepath+=~/.vim/after
+let &packpath = &runtimepath
+source ~/.vimrc
+```
+
+Install VIM.Plug
+
+```bash
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+
+Open `nvim` and run 
+
+```bash
+:PlugInstall
+```
+
+Run check for `python` and provider, almost sure it wouldn't be installed.
+
+Install `python-provider`
+
+```bash
+python3 -m pip install --user --upgrade pynvim
+```
+
+
 ## Elixir-LS VIM installation
 After installing everything in vim you have to install `coc-elixir` plugin.
 
