@@ -13,6 +13,11 @@ export PATH=$HOME/.mix/escripts:$PATH
 export PATH=$HOME/.emacs.d/bin:$PATH
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
+# Custom GO version
+export PATH="/opt/homebrew/opt/go@1.17/bin:$PATH"
+
+# Disable homebrew autoupdate
+export HOMEBREW_NO_AUTO_UPDATE=1
 
 HOMEBREW_REPOSITORY=${HOMEBREW_REPOSITORY:-"/usr/local"}
 

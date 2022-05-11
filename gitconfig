@@ -12,7 +12,7 @@
 [pull]
 	rebase = true
 [core]
-	editor = /usr/local/bin/nvim
+	editor = nvim
 	excludesfile = /Users/kos/.gitignore_global
 [merge]
 	tool = vimdiff

@@ -9,7 +9,7 @@
 			<key>Emacs</key>
 			<dict>
 				<key>date</key>
-				<date>2022-01-31T15:12:49Z</date>
+				<date>2022-05-03T10:38:23Z</date>
 				<key>entry</key>
 				<dict>
 					<key>aliases</key>
@@ -68,7 +68,7 @@
 			<key>brod</key>
 			<dict>
 				<key>date</key>
-				<date>2021-07-11T12:06:23Z</date>
+				<date>2022-05-03T10:38:30Z</date>
 				<key>entry</key>
 				<dict>
 					<key>name</key>
@@ -82,7 +82,7 @@
 			<key>decimal</key>
 			<dict>
 				<key>date</key>
-				<date>2021-01-23T08:36:16Z</date>
+				<date>2022-05-03T10:38:30Z</date>
 				<key>entry</key>
 				<dict>
 					<key>name</key>
@@ -96,7 +96,7 @@
 			<key>ecto</key>
 			<dict>
 				<key>date</key>
-				<date>2022-04-28T15:03:00Z</date>
+				<date>2022-05-05T10:39:03Z</date>
 				<key>entry</key>
 				<dict>
 					<key>name</key>
@@ -110,7 +110,7 @@
 			<key>ecto_sql</key>
 			<dict>
 				<key>date</key>
-				<date>2022-04-30T07:43:53Z</date>
+				<date>2022-05-03T10:38:25Z</date>
 				<key>entry</key>
 				<dict>
 					<key>name</key>
@@ -124,7 +124,7 @@
 			<key>ex_machina</key>
 			<dict>
 				<key>date</key>
-				<date>2021-09-27T08:53:39Z</date>
+				<date>2022-05-03T10:38:28Z</date>
 				<key>entry</key>
 				<dict>
 					<key>name</key>
@@ -138,7 +138,7 @@
 			<key>faker</key>
 			<dict>
 				<key>date</key>
-				<date>2021-12-06T21:23:41Z</date>
+				<date>2022-05-03T10:38:33Z</date>
 				<key>entry</key>
 				<dict>
 					<key>name</key>
@@ -152,7 +152,7 @@
 			<key>httpoison</key>
 			<dict>
 				<key>date</key>
-				<date>2021-01-16T15:36:52Z</date>
+				<date>2022-05-03T10:38:25Z</date>
 				<key>entry</key>
 				<dict>
 					<key>name</key>
@@ -166,7 +166,7 @@
 			<key>jason</key>
 			<dict>
 				<key>date</key>
-				<date>2021-12-21T15:41:07Z</date>
+				<date>2022-05-03T10:38:27Z</date>
 				<key>entry</key>
 				<dict>
 					<key>name</key>
@@ -180,7 +180,7 @@
 			<key>phoenix</key>
 			<dict>
 				<key>date</key>
-				<date>2022-04-17T09:02:38Z</date>
+				<date>2022-05-07T15:10:41Z</date>
 				<key>entry</key>
 				<dict>
 					<key>name</key>
@@ -194,7 +194,7 @@
 			<key>phoenix_ecto</key>
 			<dict>
 				<key>date</key>
-				<date>2021-08-22T20:28:58Z</date>
+				<date>2022-05-03T10:38:25Z</date>
 				<key>entry</key>
 				<dict>
 					<key>name</key>
@@ -208,7 +208,7 @@
 			<key>sage</key>
 			<dict>
 				<key>date</key>
-				<date>2021-01-23T08:34:46Z</date>
+				<date>2022-05-03T10:38:28Z</date>
 				<key>entry</key>
 				<dict>
 					<key>name</key>
@@ -282,42 +282,42 @@
 			<key>http://kapeli.com/feeds/Elixir.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2020-05-06T19:30:22Z</date>
+				<date>2022-05-03T10:38:28Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Erlang.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2020-05-06T19:30:35Z</date>
+				<date>2022-05-03T10:39:01Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Go.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2020-05-06T19:30:49Z</date>
+				<date>2022-05-03T10:39:08Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Lo-Dash.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2020-05-06T19:31:06Z</date>
+				<date>2022-05-03T10:38:25Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/MongoDB.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2020-05-06T19:31:13Z</date>
+				<date>2022-05-03T10:42:36Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/PostgreSQL.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2020-05-06T19:31:17Z</date>
+				<date>2022-05-03T10:38:33Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Rust.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2020-05-06T19:31:28Z</date>
+				<date>2022-05-03T10:40:39Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Vim.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2020-05-06T19:31:32Z</date>
+				<date>2022-05-03T10:39:17Z</date>
 			</dict>
 		</dict>
 		<key>uninstalled</key>
