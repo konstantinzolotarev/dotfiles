@@ -189,11 +189,19 @@ alias mf='mix format'
 alias mt='mix test'
 alias mi='mix deps.get'
 
+# ----------------------
+# Docker aliases
+# ----------------------
 alias doc='docker'
 alias dcom='docker-compose'
 alias dsa='docker stop $(docker ps -q)'
 alias docker-all-stop='docker stop $(docker ps -q)'
 alias docker-all-remove='docker rm $(docker ps -aq)'
+
+# ----------------------
+# Terraform aliases
+# ----------------------
+alias tf='terraform'
 
 # ----------------------
 # Git Functions
