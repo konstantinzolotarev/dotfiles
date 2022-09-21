@@ -202,6 +202,8 @@ alias docker-all-remove='docker rm $(docker ps -aq)'
 # Terraform aliases
 # ----------------------
 alias tf='terraform'
+alias tfaa='terraform apply -auto-approve'
+alias tfda='terraform destroy -auto-approve'
 
 # ----------------------
 # Git Functions
