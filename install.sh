@@ -16,6 +16,14 @@ fi
 # zsh
 [ ! -f ${HOME}/.zshrc ] && ln -s ${BASEDIR}/zshrc ${HOME}/.zshrc
 
+ZSH_CUSTOM=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}
+# Installing zsh-autosuggestions
+if [ ! -d ${ZSH_CUSTOM}/plugins/zsh-autosuggestions ]; then
+  git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM}/plugins/zsh-autosuggestions
+fi
+# Theme
+[ ! -f ${ZSH_CUSTOM}/themes/gitster.zsh-theme ] &&  ln -s ${BASEDIR}/zsh-themes/gitster.zsh-theme ${ZSH_CUSTOM}/themes/gitster.zsh-theme
+
 # git
 [ ! -f ${HOME}/.gitconfig ] &&  ln -s ${BASEDIR}/gitconfig ${HOME}/.gitconfig
 [ ! -f ${HOME}/.gitignore_global ] &&  ln -s ${BASEDIR}/gitignore_global ${HOME}/.gitignore_global

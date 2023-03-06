@@ -94,7 +94,9 @@ ZSH_DISABLE_COMPFIX="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(zsh-autosuggestions git mix npm docker docker-compose kubectl)
 
-source $ZSH/oh-my-zsh.sh
+if [ -s $ZSH/oh-my-zsh.sh ]; then
+    source $ZSH/oh-my-zsh.sh
+fi
 
 if [ -x "$(command -v kubectl)" ]; then
 	source <(kubectl completion zsh)
