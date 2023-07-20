@@ -43,6 +43,10 @@ if [ -d "$HOME/anaconda3/bin" ] ; then
     PATH="$HOME/anaconda3/bin:$PATH"
 fi
 
+if [ -d "$HOME/.foundry/bin" ] ; then
+    PATH="$PATH:$HOME/.foundry/bin"
+fi
+
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -226,6 +230,8 @@ function release_notes { curl -L -s http://bit.ly/2CIE31y | python - $1 develop;
 
 # . $HOME/.asdf/asdf.sh
 # . $HOME/.asdf/completions/asdf.bash
+[ -f $HOMEBREW_REPOSITORY/opt/asdf/libexec/asdf.sh ] && . $HOMEBREW_REPOSITORY/opt/asdf/libexec/asdf.sh
+
 
 # New nvm installation
 export NVM_DIR="$HOME/.nvm"
@@ -235,7 +241,9 @@ export NVM_DIR="$HOME/.nvm"
 # Z installation
 [ -f "$HOMEBREW_REPOSITORY/etc/profile.d/z.sh" ] && . "$HOMEBREW_REPOSITORY/etc/profile.d/z.sh";
 
+# Rust configuration
 [ -s $HOME/.cargo/env ] && . "$HOME/.cargo/env"
+export CARGO_NET_GIT_FETCH_WITH_CLI=true
 
 unsetopt nomatch
 
