@@ -222,6 +222,12 @@ function gtt() { git tag $1 && git push --tags; }
 function gch() { git checkout $1; }
 function release_notes { curl -L -s http://bit.ly/2CIE31y | python - $1 develop; }
 
+
+# ----------------------
+# Other functionality
+# ----------------------
+alias qq='exit'
+
 # added by Nix installer
 # if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi 
 
@@ -249,16 +255,30 @@ unsetopt nomatch
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$(''${HOME}'/opt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "$HOME/opt/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "$HOME/opt/miniconda3/etc/profile.d/conda.sh"
+if [ -d "$HOMEBREW_REPOSITORY/Caskroom/miniconda" ]; then
+    __conda_setup="$(''${HOMEBREW_REPOSITORY}'/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+    if [ $? -eq 0 ]; then
+        eval "$__conda_setup"
     else
-        export PATH="$HOME/opt/miniconda3/bin:$PATH"
+        if [ -f "$HOMEBREW_REPOSITORY/Caskroom/miniconda/base/etc/profile.d/conda.sh" ]; then
+            . "$HOMEBREW_REPOSITORY/Caskroom/miniconda/base/etc/profile.d/conda.sh"
+        else
+            export PATH="$HOMEBREW_REPOSITORY/Caskroom/miniconda/base/bin:$PATH"
+        fi
     fi
+    unset __conda_setup
+elif [ -d "$HOME/opt/miniconda3" ]; then
+    __conda_setup="$(''${HOME}'/opt/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+    if [ $? -eq 0 ]; then
+        eval "$__conda_setup"
+    else
+        if [ -f "$HOME/opt/miniconda3/etc/profile.d/conda.sh" ]; then
+            . "$HOME/opt/miniconda3/etc/profile.d/conda.sh"
+        else
+            export PATH="$HOME/opt/miniconda3/bin:$PATH"
+        fi
+    fi
+    unset __conda_setup
 fi
-unset __conda_setup
 # <<< conda initialize <<<
 

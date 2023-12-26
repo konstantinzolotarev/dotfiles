@@ -1,6 +1,7 @@
 [user]
 	name = Konstantin Zolotarev
 	email = konstantin.zolotarev@gmail.com
+	signingkey = ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDLfvumm3y9EnLeoTOJcGEZG8cp28tiEUGlMdDRmtZFzRs8RAA4DY/4LsWbDDmfe174F4jd6B10vVthyCZMmzbE+4xd5wP2f3Ynft/DZZ7RUBsfGi+4z2gK5q1ViVeVGtC4jn1HidQnbmnuNVV4gBsYgeJevjlrkhRPNknSZT5j6q2vLVV14hES1hjcdwq+mTcfT03nxyAgUaqlg0osakefhJCkJH707cZ42O8be8afzHCznQHukb/iyZMXdOzbnAhMa0S7AkJkDPVISkJCE8hb7dDB/WhQxAGcHYmVjcm/UrIfvI4jyYyBAyLrYoSJcDDnT+hOwS2B8A7A4y4VDLnO41KM5CBTwN7ir96GNiVRzp3TK43L6bIb1vz1abD/T/PRh8x3f//05KK/V5ALAQTgJ3Fh2xuod6uQ+o4YLda+Bdsn2nRPKECgz/cirAgeT5/zbcA30SrQ6A4XsYRDT+3wIRy6KTgWLe+8s264S8IDtJruhOC6I2nFfbn3TaW3gAs=
 [url "git@bitbucket.org:"]
 	insteadOf = https://bitbucket.org/
 [url "git@github.com:"]
