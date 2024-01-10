@@ -218,6 +218,7 @@ alias tfda='terraform destroy -auto-approve'
 function glf() { git log --all --grep="$1"; }
 function gsro() { git remote set-url origin $1; }
 function gcca() { git commit -am $1; }
+function gcsa() { git commit -S -am $1; }
 function gtt() { git tag $1 && git push --tags; }
 function gch() { git checkout $1; }
 function release_notes { curl -L -s http://bit.ly/2CIE31y | python - $1 develop; }
