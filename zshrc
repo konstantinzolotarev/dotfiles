@@ -4,6 +4,7 @@
 HOMEBREW_REPOSITORY=${HOMEBREW_REPOSITORY:-"/usr/local"}
 
 export LC_ALL=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -17,6 +18,8 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOMEBREW_REPOSITORY/opt/go@1.17/bin:$PATH"
 # Installing libpq
 export PATH="$HOMEBREW_REPOSITORY/opt/libpq/bin:$PATH"
+# popenCV For rust fix
+export DYLD_FALLBACK_LIBRARY_PATH="$(xcode-select --print-path)/usr/lib/"
 
 # Disable homebrew autoupdate
 export HOMEBREW_NO_AUTO_UPDATE=1
@@ -155,6 +158,7 @@ alias gbd='git branch -D'
 alias gc='git commit'
 alias gca='git commit -a'
 alias gcm='git commit -m'
+alias gcl='git clean -f -d'
 alias gco='git checkout'
 alias gcob='git checkout -b'
 alias gcom='git checkout master'
@@ -230,7 +234,7 @@ function release_notes { curl -L -s http://bit.ly/2CIE31y | python - $1 develop;
 alias qq='exit'
 
 # added by Nix installer
-# if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi 
+# if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi
 
 # added by travis gem
 # [ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
@@ -282,4 +286,3 @@ elif [ -d "$HOME/opt/miniconda3" ]; then
     unset __conda_setup
 fi
 # <<< conda initialize <<<
-
