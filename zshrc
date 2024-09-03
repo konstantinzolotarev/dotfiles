@@ -20,6 +20,8 @@ export PATH="$HOMEBREW_REPOSITORY/opt/go@1.17/bin:$PATH"
 export PATH="$HOMEBREW_REPOSITORY/opt/libpq/bin:$PATH"
 # popenCV For rust fix
 export DYLD_FALLBACK_LIBRARY_PATH="$(xcode-select --print-path)/usr/lib/"
+export LDFLAGS=-L/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/local/lib
 
 # Disable homebrew autoupdate
 export HOMEBREW_NO_AUTO_UPDATE=1
