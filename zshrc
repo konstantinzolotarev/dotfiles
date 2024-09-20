@@ -235,6 +235,11 @@ function release_notes { curl -L -s http://bit.ly/2CIE31y | python - $1 develop;
 # ----------------------
 alias qq='exit'
 
+# ----------------------
+# Key bndings
+# ----------------------
+bindkey "^R" history-beginning-search-backward
+
 # added by Nix installer
 # if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then . $HOME/.nix-profile/etc/profile.d/nix.sh; fi
 
